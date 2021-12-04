@@ -19,7 +19,7 @@ body {
     background: #f5f5f5;
     color: #4d4d4d;
     min-width: 230px;
-    max-width: 550px;
+    max-width: 1050px;
     margin: 0 auto;
     font-weight: 300;
 }
@@ -90,6 +90,47 @@ body {
     width: 40px;
     height: 40px;
     color: #cc9a9a;
+}
+
+.todo-list li .timer {
+  position: absolute;
+  top: 12px;
+  right: 300px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  color: #cc9a9a;
+}
+
+
+.todo-list li .start {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  bottom: 0;
+  width: 300px;
+  height: 40px;
+  color: #cc9a9a;
+}
+
+.todo-list li .stop {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  width: 100px;
+  height: 40px;
+  color: #cc9a9a;
+}
+
+.todo-list li .reset {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  width: 200px;
+  height: 40px;
+  color: #cc9a9a;
 }
 
 .footer {
