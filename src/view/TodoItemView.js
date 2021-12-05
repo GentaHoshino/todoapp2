@@ -8,11 +8,11 @@ export class TodoItemView {
    * @param {function ({id: string}) } onDeleteTodo 削除ボタンのイベントリスナー
    * @returns {Element}
    */
-  createElement(todoItem, { onUpdateTodo, onDeleteTodo }){
+  createElement(todoItem, { onUpdateTodo, onDeleteTodo, onTimeStart, onTimeReset, onTimeStop }){
     const todoItemElement = todoItem.completed
     ? element`<li><input type="checkbox" class="checkbox" checked>
         <s>${todoItem.title}</s>
-        <p class="timer">00:00:000</p>
+        <div class="timer">${todoItem.timer}</div>
         <button class="start">start</button>
         <button class="reset">reset</button>
         <button class="stop">stop</button>
@@ -20,7 +20,7 @@ export class TodoItemView {
     </li>`
     : element`<li><input type="checkbox" class="checkbox">
         ${todoItem.title}
-        <div class="timer">00:00:000</div>
+        <div class="timer">${todoItem.timer}</div>
         <button class="start">start</button>
         <button class="reset">reset</button>
         <button class="stop">stop</button>
@@ -40,6 +40,30 @@ export class TodoItemView {
       onDeleteTodo({
         id: todoItem.id
       });
+    });
+    const startButtonElement = todoItemElement.querySelector(".start");
+    startButtonElement.addEventListener("click", () => {
+      // コールバック関数に変更
+      onTimeStart({
+        id: todoItem.id
+      });
+      console.log("start");
+    });
+    const resetButtonElement = todoItemElement.querySelector(".reset");
+    resetButtonElement.addEventListener("click", () => {
+      // コールバック関数に変更
+      onTimeReset({
+        id: todoItem.id
+      });
+      console.log("reset");
+    });
+    const stopButtonElement = todoItemElement.querySelector(".stop");
+    stopButtonElement.addEventListener("click", () => {
+      // コールバック関数に変更
+      onTimeStop({
+        id: todoItem.id
+      });
+      console.log("stop");
     });
     // 作成したTodoアイテムのHTML要素を返す
     return todoItemElement;

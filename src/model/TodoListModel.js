@@ -83,4 +83,46 @@ export class TodoListModel extends EventEmitter {
     this.emitChange();
     
   }
+    /**
+   * 指定したidのTodoItemのタイマーをスタートする
+   * @param {{id: number}}
+   * 
+   */
+     timeStart({id}) {
+    // `id`が一致するTodoItemを見つけ、タイマーをスタートする
+    const todoItem = this.items.find(todo => todo.id === id);
+    if(!todoItem){
+      return;
+    }
+    todoItem.startStopWatch();
+    this.emitChange();
+    }
+   /**
+   * 指定したidのTodoItemのタイマーをリセットする
+   * @param {{id: number}}
+   * 
+   */
+    timeReset({id}) {
+      // `id`が一致するTodoItemを見つけ、タイマーをスタートする
+      const todoItem = this.items.find(todo => todo.id === id);
+      if(!todoItem){
+        return;
+      }
+      todoItem.resetStopWatch();
+      this.emitChange();
+    }
+   /**
+   * 指定したidのTodoItemのタイマーをストップする
+   * @param {{id: number}}
+   * 
+   */
+    timeStop({id}) {
+      // `id`が一致するTodoItemを見つけ、タイマーをスタートする
+      const todoItem = this.items.find(todo => todo.id === id);
+      if(!todoItem){
+        return;
+      }
+      todoItem.stopStopWatch();
+      this.emitChange();
+    }
 }

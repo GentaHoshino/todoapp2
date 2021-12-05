@@ -94,11 +94,11 @@ body {
 
 .todo-list li .timer {
   position: absolute;
-  top: 12px;
+  top: 16px;
   right: 300px;
   bottom: 0;
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: auto;
   color: #cc9a9a;
 }
 
@@ -106,32 +106,34 @@ body {
 .todo-list li .start {
   position: absolute;
   top: 0;
-  right: 40px;
+  right: 170px;
   bottom: 0;
-  width: 300px;
-  height: 40px;
+  width: auto;
+  height: auto;
   color: #cc9a9a;
 }
 
 .todo-list li .stop {
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 50px;
   bottom: 0;
-  width: 100px;
-  height: 40px;
+  width: auto;
+  height: auto;
   color: #cc9a9a;
 }
 
 .todo-list li .reset {
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 110px;
   bottom: 0;
-  width: 200px;
-  height: 40px;
+  width: auto;
+  height: auto;
   color: #cc9a9a;
 }
+
+
 
 .footer {
     color: #777;

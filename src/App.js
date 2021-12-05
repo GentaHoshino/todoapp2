@@ -43,6 +43,27 @@ export class App{
     handleDelete({id}) {
       this.todoListModel.deleteTodo( { id });
     }
+    /**
+     * Startボタンを押したときに呼ばれるリスナー関数
+     * @param {{ id:number}}
+     */
+     handleTimeStart({id}) {
+      this.todoListModel.timeStart( { id });
+    }
+    /**
+     * Resetボタンを押したときに呼ばれるリスナー関数
+     * @param {{ id:number}}
+     */
+     handleTimeReset({id}) {
+      this.todoListModel.timeReset( { id });
+    }
+    /**
+     * Stopボタンを押したときに呼ばれるリスナー関数
+     * @param {{ id:number}}
+     */
+     handleTimeStop({id}) {
+      this.todoListModel.timeStop( { id });
+    }
 
     /**
      * Todoが変更されたときに呼ばれる関数
@@ -61,7 +82,19 @@ export class App{
           // Todoアイテムが削除イベントを発生したときに呼ばれるリスナー関数
           onDeleteTodo: ( { id }) => {
             this.handleDelete({ id });
-          }
+          },
+          // Startボタンを押したときに呼ばれるリスナー関数
+          onTimeStart: ( { id }) => {
+            this.handleTimeStart({ id });
+          },
+          // Resetボタンを押したときに呼ばれるリスナー関数
+          onTimeReset: ( { id }) => {
+            this.handleTimeReset({ id });
+          },
+          // Stopボタンを押したときに呼ばれるリスナー関数
+          onTimeStop: ( { id }) => {
+            this.handleTimeStop({ id });
+          }                    
         });
         //containerElementの中身をtodoListElementで上書(きする
         render(todoListElement, todoListContainerElement);
